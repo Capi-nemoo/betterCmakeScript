@@ -25,13 +25,11 @@ if [[ "$save_choice" == "y" || "$save_choice" == "Y" ]]; then
 	date_display=$(date +"%Y/%m/%d")
 	date_part=$(date +"%Y_%m_%d")
 
-	# create the folder
 	save_folder="../prevBuilds/${custom_name}_${date_part}"
 	mkdir -p "$save_folder"
 
 	echo "version will be saved as '$custom_name' on date '$date_display' in folder '$save_folder'."
 
-  # Copy the executable and source files to the new folder
   cp ./ftxui_app "$save_folder"
   cp ../src/* "$save_folder"
 
@@ -40,3 +38,4 @@ else
   echo "Version not saved."
 fi
 
+exit 
